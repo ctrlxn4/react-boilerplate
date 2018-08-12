@@ -1,8 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const DashboardPlugin = require('webpack-dashboard/plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 const plugins = [
+  new BundleAnalyzerPlugin(),
   new DashboardPlugin(),
   new HtmlWebPackPlugin({
     template: "./src/templates/index.html",
