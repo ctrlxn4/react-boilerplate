@@ -4,13 +4,16 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const path = require('path');
 
 const plugins = [
-  new BundleAnalyzerPlugin(),
+  new BundleAnalyzerPlugin({
+    analyzerMode: 'static',
+    openAnalyzer: false,
+  }),
   new DashboardPlugin(),
   new HtmlWebPackPlugin({
     template: "./src/templates/index.html",
     filename: "./index.html",
     inject: true,
-  })
+  }),
 ];
 
 const rules = [
@@ -53,5 +56,3 @@ module.exports = {
   },
   plugins,
 };
-
-
